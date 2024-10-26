@@ -11,7 +11,6 @@ const App = () => {
         <Route path="/" exact>
           <Hero />
           <SearchBar />
-         
         </Route>
       </Switch>
     </>
