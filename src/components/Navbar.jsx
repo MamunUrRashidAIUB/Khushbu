@@ -6,7 +6,7 @@ import {
   FaShoppingCart,
   FaBars,
   FaAngleRight,
-  FaTimes, // Import the close icon
+  FaTimes,
 } from "react-icons/fa";
 import logo from "../components/logo.png";
 import brandsData from "../Khushbu.json";
@@ -15,13 +15,13 @@ import { useState } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-  // State for submenu
   const [isSubmenuOpen2, setIsSubmenuOpen2] = useState(false);
   const [isSubmenuOpen3, setIsSubmenuOpen3] = useState(false);
+
   const toggle = () => setIsOpen(!isOpen);
   const toggleSubmenu = () => setIsSubmenuOpen(!isSubmenuOpen);
   const toggleSubmenu2 = () => setIsSubmenuOpen2(!isSubmenuOpen2);
-  const toggleSubmenu3 = () => setIsSubmenuOpen3(!isSubmenuOpen3); // Toggle submenu
+  const toggleSubmenu3 = () => setIsSubmenuOpen3(!isSubmenuOpen3);
 
   return (
     <nav className="bg-white text-black p-4 shadow">
@@ -42,7 +42,10 @@ const Navbar = () => {
         {/* Navigation Links for Desktop */}
         <div className="hidden lg:flex flex-1 pr-32">
           <ul className="flex space-x-4 font-extrabold md:text-xs">
-            <li>
+            <li
+              onMouseEnter={() => setIsSubmenuOpen(true)}
+              className="relative group"
+            >
               <NavLink
                 to="/Perfume"
                 className={({ isActive }) =>
@@ -52,6 +55,25 @@ const Navbar = () => {
               >
                 Perfume
               </NavLink>
+              {/* Submenu for Perfume */}
+              {isSubmenuOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-400 shadow-md z-10">
+                  <NavLink
+                    to="/brands/men"
+                    className="block px-4 py-2 text-black hover:bg-gray-200"
+                    aria-label="Men"
+                  >
+                    Men
+                  </NavLink>
+                  <NavLink
+                    to="/brands/women"
+                    className="block px-4 py-2 text-black hover:bg-gray-200"
+                    aria-label="Women"
+                  >
+                    Women
+                  </NavLink>
+                </div>
+              )}
             </li>
             <li>
               <NavLink
@@ -75,7 +97,10 @@ const Navbar = () => {
                 Attar
               </NavLink>
             </li>
-            <li>
+            <li
+              onMouseEnter={() => setIsSubmenuOpen2(true)}
+              className="relative group"
+            >
               <NavLink
                 to="/mini-perfumes"
                 className={({ isActive }) =>
@@ -85,8 +110,27 @@ const Navbar = () => {
               >
                 Mini Perfumes
               </NavLink>
+              {/* Submenu for Mini Perfumes */}
+              {isSubmenuOpen2 && (
+                <div className="absolute left-0 mt-2 w-48 bg-gray-400 text-white shadow-md z-10">
+                  <NavLink
+                    to="/brands/men"
+                    className="block px-4 py-2  hover:bg-gray-200"
+                    aria-label="Men"
+                  >
+                    Men
+                  </NavLink>
+                  <NavLink
+                    to="/brands/women"
+                    className="block px-4 py-2  hover:bg-gray-200"
+                    aria-label="Women"
+                  >
+                    Women
+                  </NavLink>
+                </div>
+              )}
             </li>
-            <li>
+            <li onMouseEnter={() => setIsSubmenuOpen3(true)}>
               <NavLink
                 to="/brands"
                 className={({ isActive }) =>
@@ -96,6 +140,21 @@ const Navbar = () => {
               >
                 Brands
               </NavLink>
+              {isSubmenuOpen3 && (
+                <div className="absolute p-3 mt-2 w-48 bg-gray-400 text-white shadow-md z-auto">
+                  {brandsData.map((brand, index) => (
+                    <NavLink
+                      key={index}
+                      to={`/brands/${brand.name.toLowerCase()}`}
+                      className="text-lg"
+                      aria-label={brand.name}
+                      onClick={toggle}
+                    >
+                      {brand.name}
+                    </NavLink>
+                  ))}
+                </div>
+              )}
             </li>
           </ul>
         </div>
@@ -144,7 +203,7 @@ const Navbar = () => {
               Perfume
             </NavLink>
             <FaAngleRight
-              onClick={toggleSubmenu} // Toggle submenu on click
+              onClick={toggleSubmenu}
               className="text-xl cursor-pointer"
             />
           </div>
@@ -197,7 +256,7 @@ const Navbar = () => {
               Mini Perfumes
             </NavLink>
             <FaAngleRight
-              onClick={toggleSubmenu2} // Toggle submenu on click
+              onClick={toggleSubmenu2}
               className="text-xl cursor-pointer"
             />
           </div>
@@ -240,18 +299,20 @@ const Navbar = () => {
               Brands
             </NavLink>
             <FaAngleRight
-              onClick={toggleSubmenu3} // Toggle submenu on click
+              onClick={toggleSubmenu3}
               className="text-xl cursor-pointer"
             />
           </div>
 
           {isSubmenuOpen3 && (
             <div className="flex flex-col space-y-4 ml-6">
-              {brandsData.map((brand) => (
+              {/* Add brand links or categories here */}
+              {brandsData.map((brand, index) => (
                 <NavLink
-                  key={brand.name}
-                  to={brand.link}
+                  key={index}
+                  to={`/brands/${brand.name.toLowerCase()}`}
                   className="text-lg"
+                  aria-label={brand.name}
                   onClick={toggle}
                 >
                   {brand.name}
