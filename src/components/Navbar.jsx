@@ -6,6 +6,7 @@ import {
   FaUser,
   FaShoppingCart,
   FaBars,
+  FaAngleRight,
   FaTimes, // Import the close icon
 } from "react-icons/fa";
 import logo from "../components/logo.png";
@@ -13,7 +14,9 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false); // State for submenu
   const toggle = () => setIsOpen(!isOpen);
+  const toggleSubmenu = () => setIsSubmenuOpen(!isSubmenuOpen); // Toggle submenu
 
   return (
     <nav className="bg-white text-black p-4 shadow">
@@ -125,15 +128,44 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex flex-col p-10  h-full space-y-8">
-          <NavLink
-            to="/Perfume"
-            className="text-xl"
-            aria-label="Perfume"
-            onClick={toggle}
-          >
-            Perfume
-          </NavLink>
+        <div className="flex flex-col p-10 h-full space-y-8">
+          <div className="flex items-center justify-between">
+            <NavLink
+              to="/Perfume"
+              className="text-xl"
+              aria-label="Perfume"
+              onClick={toggle}
+            >
+              Perfume
+            </NavLink>
+            <FaAngleRight
+              onClick={toggleSubmenu} // Toggle submenu on click
+              className="text-xl cursor-pointer"
+            />
+          </div>
+
+          {/* Conditionally render submenu links */}
+          {isSubmenuOpen && (
+            <div className="flex flex-col space-y-4 ml-6">
+              <NavLink
+                to="/brands/men"
+                className="text-lg"
+                aria-label="Men"
+                onClick={toggle}
+              >
+                Men
+              </NavLink>
+              <NavLink
+                to="/brands/women"
+                className="text-lg"
+                aria-label="Women"
+                onClick={toggle}
+              >
+                Women
+              </NavLink>
+            </div>
+          )}
+
           <NavLink
             to="/Body-spray"
             className="text-xl"
