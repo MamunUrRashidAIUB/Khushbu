@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "image": "./images/logo1.jpeg",
+    "alt": "Perfume Brand Logo 1"
+  },
+  {
+    "id": 2,
+    "image": "./images/logo2.jpeg",
+    "alt": "Perfume Brand Logo 2"
+  },
+  {
+    "id": 3,
+    "image": "./images/logo3.jpeg",
+    "alt": "Perfume Brand Logo 3"
+  },
+  {
+    "id": 3,
+    "image": "./images/logo4.jpeg",
+    "alt": "Perfume Brand Logo 3"
+  },
+  {
+    "id": 3,
+    "image": "./images/logo5.png",
+    "alt": "Perfume Brand Logo 3"
+  },
+  {
+    "id": 3,
+    "image": "./images/logo6.png",
+    "alt": "Perfume Brand Logo 3"
+  },
+  {
+    "id": 3,
+    "image": "./images/logo7.png",
+    "alt": "Perfume Brand Logo 3"
+  }
+]
