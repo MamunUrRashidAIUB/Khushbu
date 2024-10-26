@@ -22,7 +22,7 @@ const SearchBar = ({ onSearch }) => {
       />
       <button
         type="submit"
-        className="h-10 w-24 p-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600"
+        className="h-10 w-24 p-2 bg-gray-800 text-white rounded-r-md hover:bg-gray-500"
       >
         Search
       </button>
