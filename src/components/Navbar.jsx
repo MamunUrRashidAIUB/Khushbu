@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import { Link, NavLink } from "react-router-dom";
 import {
   FaHeart,
@@ -10,6 +9,7 @@ import {
   FaTimes, // Import the close icon
 } from "react-icons/fa";
 import logo from "../components/logo.png";
+import brandsData from "../Khushbu.json";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -247,46 +247,16 @@ const Navbar = () => {
 
           {isSubmenuOpen3 && (
             <div className="flex flex-col space-y-4 ml-6">
-              <NavLink
-                to="/versace"
-                className="text-lg"
-                aria-label="Versace"
-                onClick={toggle}
-              >
-                Versace
-              </NavLink>
-              <NavLink
-                to="/hugo-boss"
-                className="text-lg"
-                aria-label="Hugo Boss"
-                onClick={toggle}
-              >
-                Hugo Boss
-              </NavLink>
-              <NavLink
-                to="/pirrre-cardin"
-                className="text-lg"
-                aria-label="Pierre Cardin"
-                onClick={toggle}
-              >
-                Pierre Cardin
-              </NavLink>
-              <NavLink
-                to="/jaguar"
-                className="text-lg"
-                aria-label="Jaguar"
-                onClick={toggle}
-              >
-                Jaguar
-              </NavLink>
-              <NavLink
-                to="/davidoff"
-                className="text-lg"
-                aria-label="Davidoff"
-                onClick={toggle}
-              >
-                Davidoff
-              </NavLink>
+              {brandsData.map((brand) => (
+                <NavLink
+                  key={brand.name}
+                  to={brand.link}
+                  className="text-lg"
+                  onClick={toggle}
+                >
+                  {brand.name}
+                </NavLink>
+              ))}
             </div>
           )}
         </div>
