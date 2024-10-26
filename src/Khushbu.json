@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Eau de Parfum",
+    "brand": "Brand A",
+    "price": 59.99,
+    "description": "A luxurious fragrance with notes of jasmine and sandalwood.",
+    "image": "https://example.com/images/perfume1.jpg",
+    "category": "Floral",
+    "gender": "women"
+  },
+  {
+    "id": 2,
+    "name": "Citrus Fresh",
+    "brand": "Brand B",
+    "price": 49.99,
+    "description": "A refreshing scent with notes of lemon and orange.",
+    "image": "https://example.com/images/perfume2.jpg",
+    "category": "Citrus",
+    "gender": "men"
+  },
+  {
+    "id": 3,
+    "name": "Ocean Breeze",
+    "brand": "Brand C",
+    "price": 39.99,
+    "description": "A clean and fresh fragrance reminiscent of the sea.",
+    "image": "https://example.com/images/perfume3.jpg",
+    "category": "Aquatic",
+    "gender": "unisex"
+  },
+  {
+    "id": 4,
+    "name": "Vanilla Dream",
+    "brand": "Brand D",
+    "price": 55.99,
+    "description": "A sweet and warm scent with notes of vanilla and amber.",
+    "image": "https://example.com/images/perfume4.jpg",
+    "category": "Gourmand",
+    "gender": "women"
+  },
+  {
+    "id": 5,
+    "name": "Musk Essence",
+    "brand": "Brand E",
+    "price": 69.99,
+    "description": "A bold and captivating fragrance with notes of musk and wood.",
+    "image": "https://example.com/images/perfume5.jpg",
+    "category": "Woody",
+    "gender": "men"
+  }
+]
