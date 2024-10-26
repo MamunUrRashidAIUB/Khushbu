@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import logo from "../components/logo.png";
 import brandsData from "../Khushbu.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,25 @@ const Navbar = () => {
   const toggleSubmenu = () => setIsSubmenuOpen(!isSubmenuOpen);
   const toggleSubmenu2 = () => setIsSubmenuOpen2(!isSubmenuOpen2);
   const toggleSubmenu3 = () => setIsSubmenuOpen3(!isSubmenuOpen3);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".group") && isSubmenuOpen) {
+        setIsSubmenuOpen(false);
+      }
+      if (!event.target.closest(".group") && isSubmenuOpen2) {
+        setIsSubmenuOpen2(false);
+      }
+      if (!event.target.closest(".group") && isSubmenuOpen3) {
+        setIsSubmenuOpen3(false);
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isSubmenuOpen, isSubmenuOpen2, isSubmenuOpen3]);
   return (
     <nav className="bg-white text-black p-4 shadow">
       <div className="container mx-auto flex items-center justify-between">
@@ -42,39 +60,45 @@ const Navbar = () => {
         {/* Navigation Links for Desktop */}
         <div className="hidden lg:flex flex-1 pr-32">
           <ul className="flex space-x-4 font-extrabold md:text-xs">
-            <li
-              onMouseEnter={() => setIsSubmenuOpen(true)}
-              className="relative group"
-            >
-              <NavLink
-                to="/Perfume"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-500" : "hover:text-gray-400"
-                }
-                aria-label="Perfume"
-              >
-                Perfume
-              </NavLink>
+            <li className="relative group">
+              {/* Parent div to control hover state */}
+              <div onMouseEnter={() => setIsSubmenuOpen(true)}>
+                <NavLink
+                  to="/Perfume"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-500" : "hover:text-gray-400"
+                  }
+                  aria-label="Perfume"
+                >
+                  Perfume
+                </NavLink>
+              </div>
+
               {/* Submenu for Perfume */}
-              {isSubmenuOpen && (
-                <div className="absolute left-0 mt-2 w-48 bg-gray-400 shadow-md z-10">
-                  <NavLink
-                    to="/brands/men"
-                    className="block px-4 py-2 text-black hover:bg-gray-200"
-                    aria-label="Men"
-                  >
-                    Men
-                  </NavLink>
-                  <NavLink
-                    to="/brands/women"
-                    className="block px-4 py-2 text-black hover:bg-gray-200"
-                    aria-label="Women"
-                  >
-                    Women
-                  </NavLink>
-                </div>
-              )}
+              <div
+                className={`absolute left-0 mt-2 w-48 bg-gray-500 text-white shadow-md z-10 ${
+                  isSubmenuOpen ? "block" : "hidden"
+                }`}
+                onMouseEnter={() => setIsSubmenuOpen(true)} // Keep submenu open on hover
+                onMouseLeave={() => setIsSubmenuOpen(false)} // Close submenu when not hovered
+              >
+                <NavLink
+                  to="/brands/men"
+                  className="block px-4 py-2  hover:bg-gray-200 hover:text-black"
+                  aria-label="Men"
+                >
+                  Men
+                </NavLink>
+                <NavLink
+                  to="/brands/women"
+                  className="block px-4 py-2  hover:bg-gray-200 hover:text-black"
+                  aria-label="Women"
+                >
+                  Women
+                </NavLink>
+              </div>
             </li>
+
             <li>
               <NavLink
                 to="/Body-spray"
@@ -97,58 +121,75 @@ const Navbar = () => {
                 Attar
               </NavLink>
             </li>
-            <li
-              onMouseEnter={() => setIsSubmenuOpen2(true)}
-              className="relative group"
-            >
-              <NavLink
-                to="/mini-perfumes"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-500" : "hover:text-gray-400"
-                }
-                aria-label="Mini Perfumes"
-              >
-                Mini Perfumes
-              </NavLink>
+            <li className="relative group">
+              {/* Parent div to control hover state */}
+              <div onMouseEnter={() => setIsSubmenuOpen2(true)}>
+                <NavLink
+                  to="/mini-perfumes"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-500" : "hover:text-gray-400"
+                  }
+                  aria-label="Mini Perfumes"
+                >
+                  Mini Perfumes
+                </NavLink>
+              </div>
+
               {/* Submenu for Mini Perfumes */}
-              {isSubmenuOpen2 && (
-                <div className="absolute left-0 mt-2 w-48 bg-gray-400 text-white shadow-md z-10">
-                  <NavLink
-                    to="/brands/men"
-                    className="block px-4 py-2  hover:bg-gray-200"
-                    aria-label="Men"
-                  >
-                    Men
-                  </NavLink>
-                  <NavLink
-                    to="/brands/women"
-                    className="block px-4 py-2  hover:bg-gray-200"
-                    aria-label="Women"
-                  >
-                    Women
-                  </NavLink>
-                </div>
-              )}
-            </li>
-            <li onMouseEnter={() => setIsSubmenuOpen3(true)}>
-              <NavLink
-                to="/brands"
-                className={({ isActive }) =>
-                  isActive ? "text-blue-500" : "hover:text-gray-400"
-                }
-                aria-label="Brands"
+              <div
+                className={`absolute left-0 mt-2 w-48 bg-gray-500 text-white shadow-md z-10 ${
+                  isSubmenuOpen2 ? "block" : "hidden"
+                }`}
+                onMouseEnter={() => setIsSubmenuOpen2(true)} // Keep submenu open on hover
+                onMouseLeave={() => setIsSubmenuOpen2(false)} // Close submenu when not hovered
               >
-                Brands
-              </NavLink>
+                <NavLink
+                  to="/brands/men"
+                  className="block px-4 py-2 hover:bg-gray-200 hover:text-black"
+                  aria-label="Men"
+                >
+                  Men
+                </NavLink>
+                <NavLink
+                  to="/brands/women"
+                  className="block px-4 py-2 hover:bg-gray-200 hover:text-black"
+                  aria-label="Women"
+                >
+                  Women
+                </NavLink>
+              </div>
+            </li>
+            <li className="relative group">
+              <div
+                onMouseEnter={() => setIsSubmenuOpen3(true)} // Open submenu on hover
+                // Close submenu when not hovered
+              >
+                <NavLink
+                  to="/brands"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-500" : "hover:text-gray-400"
+                  }
+                  aria-label="Brands"
+                >
+                  Brands
+                </NavLink>
+              </div>
+
+              {/* Submenu for Brands */}
               {isSubmenuOpen3 && (
-                <div className="absolute p-3 mt-2 w-48 bg-gray-400 text-white shadow-md z-auto">
+                <div
+                  className="absolute p-3 mt-2 w-48 bg-gray-500 text-white shadow-md z-auto"
+                  onMouseEnter={() => setIsSubmenuOpen3(true)} // Keep submenu open on hover
+                  onMouseLeave={() => setIsSubmenuOpen3(false)} // Close submenu when not hovered
+                >
                   {brandsData.map((brand, index) => (
                     <NavLink
                       key={index}
                       to={`/brands/${brand.name.toLowerCase()}`}
-                      className="text-lg"
+                      className="block text-lg px-2 py-1 hover:bg-gray-200 hover:text-black"
                       aria-label={brand.name}
                       onClick={toggle}
+                      
                     >
                       {brand.name}
                     </NavLink>
