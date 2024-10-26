@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "image": "./images/new7.jpeg",
+    "title": "New Arrival 1",
+    "description": "Description for New Arrival 1"
+  },
+  {
+    "id": 2,
+    "image": "./images/new7.jpeg",
+    "title": "New Arrival 2",
+    "description": "Description for New Arrival 2"
+  },
+  {
+    "id": 3,
+    "image": "./images/new7.jpeg",
+    "title": "New Arrival 3",
+    "description": "Description for New Arrival 3"
+  },
+    {
+        "id": 4,
+        "image": "./images/new7.jpeg",
+        "title": "New Arrival 4",
+        "description": "Description for New Arrival 4"
+    },
+    {
+        "id": 5,
+        "image": "./images/new7.jpeg",
+        "title": "New Arrival 5",
+        "description": "Description for New Arrival 5"
+    },
+    {
+        "id": 6,
+        "image": "./images/new7.jpeg",
+        "title": "New Arrival 6",
+        "description": "Description for New Arrival 6"
+    }
+]

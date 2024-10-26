@@ -24,7 +24,7 @@ const Navbar = () => {
   const toggleSubmenu3 = () => setIsSubmenuOpen3(!isSubmenuOpen3);
 
   return (
-    <nav className="bg-white text-black p-4 shadow">
+    <nav className=" bg-white text-black p-4 shadow fixed top-0 left-0 w-full z-10">
       <div className="container mx-auto flex items-center justify-between">
         {/* Hamburger Menu Icon for Small Screens */}
         <div className="flex lg:hidden">
