@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import logo from "../components/logo.png";
 import brandsData from "../Khushbu.json";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,25 +22,7 @@ const Navbar = () => {
   const toggleSubmenu = () => setIsSubmenuOpen(!isSubmenuOpen);
   const toggleSubmenu2 = () => setIsSubmenuOpen2(!isSubmenuOpen2);
   const toggleSubmenu3 = () => setIsSubmenuOpen3(!isSubmenuOpen3);
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest(".group") && isSubmenuOpen) {
-        setIsSubmenuOpen(false);
-      }
-      if (!event.target.closest(".group") && isSubmenuOpen2) {
-        setIsSubmenuOpen2(false);
-      }
-      if (!event.target.closest(".group") && isSubmenuOpen3) {
-        setIsSubmenuOpen3(false);
-      }
-    };
 
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isSubmenuOpen, isSubmenuOpen2, isSubmenuOpen3]);
   return (
     <nav className="bg-white text-black p-4 shadow">
       <div className="container mx-auto flex items-center justify-between">
@@ -188,8 +170,6 @@ const Navbar = () => {
                       to={`/brands/${brand.name.toLowerCase()}`}
                       className="block text-lg px-2 py-1 hover:bg-gray-200 hover:text-black"
                       aria-label={brand.name}
-                      onClick={toggle}
-                      
                     >
                       {brand.name}
                     </NavLink>
