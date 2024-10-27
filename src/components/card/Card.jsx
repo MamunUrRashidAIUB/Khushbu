@@ -1,14 +1,8 @@
 
-import { Link } from "react-router-dom";
-
 const Card = ({ image, name, price, onAddToCart, onQuickView, onWishlist }) => {
   return (
     <div className="border rounded-lg shadow-md p-4 flex flex-col items-center">
-      <img
-        src={image}
-        alt={name}
-        className="w-full h-48 object-cover rounded"
-      />
+      <img src={image} alt={name} className=" h-48 object-cover rounded" />
       <h3 className="mt-4 text-lg font-semibold">{name}</h3>
       <p className="mt-2 text-gray-600">${price ? price.toFixed(2) : "N/A"}</p>
       <div className="flex gap-2 mt-4">
