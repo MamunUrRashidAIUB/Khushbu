@@ -76,7 +76,7 @@ const Hero = () => {
             <img
               src={item.image}
               alt={item.title}
-              className=" object-cover" // Adjusted class for sizing
+              className="object-cover" // Adjusted class for sizing
             />
             {/* Animated Title */}
             <h2
