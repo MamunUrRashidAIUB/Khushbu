@@ -171,7 +171,6 @@ const Navbar = () => {
                       to={`/brands/${brand.toLowerCase()}`}
                       className="block text-lg px-2 py-1 hover:bg-gray-200 hover:text-black"
                       aria-label={brand}
-                     
                     >
                       {brand}
                     </NavLink>
