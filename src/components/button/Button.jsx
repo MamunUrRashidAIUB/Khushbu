@@ -3,7 +3,7 @@ const Button = ({ text, onClick }) => {
     <div>
       <button
         onClick={onClick}
-        className="bg-white uppercase  text-gray-500 font-bold py-2 px-8 rounded-full border border-gray-300 hover:border-gray-600"
+        className="bg-white uppercase sm: py-0 sm:justify-center  text-gray-500 font-bold lg:py-2 px-8 rounded-full border border-gray-300 hover:border-gray-600"
       >
         {text}
       </button>

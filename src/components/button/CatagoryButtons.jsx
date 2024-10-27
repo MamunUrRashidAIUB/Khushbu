@@ -28,7 +28,7 @@ const CategoryButtons = () => {
       <div
         className={`${
           isDropdownOpen ? "block" : "hidden"
-        } lg:flex lg:justify-center lg:gap-16 lg:static absolute top-full left-0 w-full bg-slate-500 z-10 shadow-lg lg:shadow-none`}
+        } lg:flex justify-center rounded-lg  lg:gap-16 lg:bg-white lg:static absolute top-full left-0 lg:w-full sm:w-1/3  z-10  lg:shadow-none`}
       >
         <Button text={"Latest"} />
         <Button text={"Men"} />
