@@ -8,7 +8,8 @@
     "image": "./images/p1.jpeg",
     "category": "Latest",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Eau de Parfum by Brand A"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "image": "./images/p2.jpeg",
     "category": "Men",
     "gender": "Men",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Citrus Fresh by Brand B"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "image": "./images/p3.jpeg",
     "category": "Men",
     "gender": "Unisex",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Ocean Breeze by Brand C"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "image": "./images/p4.jpeg",
     "category": "Men",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Vanilla Dream by Brand D"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "image": "./images/p5.jpeg",
     "category": "Women",
     "gender": "Men",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Musk Essence by Brand E"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "image": "./images/p6.jpeg",
     "category": "Floral",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Lavender Bliss by Brand B"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "image": "./images/p7.jpeg",
     "category": "Oriental",
     "gender": "Unisex",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Amber Noir by Brand D"
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "image": "./images/p8.jpeg",
     "category": "Earthy",
     "gender": "Men",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Green Forest by Brand C"
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "image": "./images/p9.jpeg",
     "category": "Latest",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Rose Petal by Brand A"
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "image": "./images/p10.jpeg",
     "category": "Women",
     "gender": "Men",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Spice Route by Brand B"
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "image": "./images/p11.jpeg",
     "category": "Latest",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Sweet Vanilla by Brand E"
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "image": "./images/p12.jpeg",
     "category": "Perfume Oil/Attar",
     "gender": "Unisex",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Woodland Musk by Brand C"
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "image": "./images/p14.jpeg",
     "category": "Body Spray",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Bergamot Bliss by Brand D"
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "image": "./images/p15.jpeg",
     "category": "Perfume Oil/Attar",
     "gender": "Men",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Leather & Spice by Brand E"
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "image": "./images/p16.jpeg",
     "category": "Body Spray",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Peach Nectar by Brand B"
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "image": "./images/p17.jpeg",
     "category": "Oriental",
     "gender": "Unisex",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Mystic Oud by Brand C"
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "image": "./images/p18.jpeg",
     "category": "Perfume Oil/Attar",
     "gender": "Unisex",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Lime Zest by Brand A"
   },
   {
     "id": 18,
@@ -195,6 +212,7 @@
     "image": "./images/p19.png",
     "category": "Body Spray",
     "gender": "Women",
-    "link": "/perfume1"
+    "link": "/perfume1",
+    "title": "Exotic Jasmine by Brand D"
   }
 ]

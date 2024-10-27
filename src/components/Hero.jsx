@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback } from "react";
 import { gsap } from "gsap";
-import newArrivals from "../Newarrivals.json"; // Adjust the path accordingly
+import newArrivals from "../Khushbu.json"; // Adjust the path accordingly
 
 const Hero = () => {
   const sliderRef = useRef(null);
@@ -95,10 +95,7 @@ const Hero = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <button
-       
-        className="absolute left-4 top-1/2 text-white transform -translate-y-1/2 bg-gray-400 px-4 py-2 rounded hover:bg-gray-600 transition"
-      >
+      <button className="absolute left-4 top-1/2 text-white transform -translate-y-1/2 bg-gray-400 px-4 py-2 rounded hover:bg-gray-600 transition">
         Prev
       </button>
       <button
