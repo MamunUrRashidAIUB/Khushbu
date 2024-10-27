@@ -20,26 +20,26 @@ const PerfumeLogos = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef(null);
+  const logosPerView = window.innerWidth < 640 ? 2 : 4;
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? logos.length - 4 : prevIndex - 4
+      prevIndex === 0 ? logos.length - logosPerView : prevIndex - logosPerView
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + 4 >= logos.length ? 0 : prevIndex + 4
+      prevIndex + logosPerView >= logos.length ? 0 : prevIndex + logosPerView
     );
   };
 
-  // Animate the logos on index change
   useEffect(() => {
     if (containerRef.current) {
       gsap.fromTo(
         containerRef.current.children,
-        { opacity: 0, x: currentIndex === 0 ? -50 : 50 }, // Starting state
-        { opacity: 1, x: 0, stagger: 0.1, duration: 0.8, ease: "power3.out" } // Ending state
+        { opacity: 0, x: currentIndex === 0 ? -50 : 50 },
+        { opacity: 1, x: 0, stagger: 0.1, duration: 0.8, ease: "power3.out" }
       );
     }
   }, [currentIndex]);
@@ -47,29 +47,29 @@ const PerfumeLogos = () => {
   return (
     <div className="flex items-center justify-center my-8">
       {/* Left Arrow */}
-      <button onClick={handlePrevious} className="text-gray-800 mx-4">
-        <FontAwesomeIcon icon={faChevronLeft} size="2x" />
+      <button onClick={handlePrevious} className="text-gray-800 mx-2 sm:mx-4">
+        <FontAwesomeIcon icon={faChevronLeft} size="1x sm:2x" />
       </button>
 
       {/* Logo Images with GSAP Animation */}
       <div
-        className="flex flex-wrap justify-center items-center gap-4"
+        className="flex flex-wrap justify-center items-center gap-2 sm:gap-4"
         ref={containerRef}
       >
-        {logos.slice(currentIndex, currentIndex + 4).map((logo) => (
-          <div key={logo.id} className="m-2">
+        {logos.slice(currentIndex, currentIndex + logosPerView).map((logo) => (
+          <div key={logo.id} className="m-1 sm:m-2">
             <img
               src={logo.image}
               alt={logo.name}
-              className="h-24 w-auto hover:scale-105 transition-transform duration-300"
+              className="h-16 w-auto sm:h-24 hover:scale-105 transition-transform duration-300"
             />
           </div>
         ))}
       </div>
 
       {/* Right Arrow */}
-      <button onClick={handleNext} className="text-gray-800 mx-4">
-        <FontAwesomeIcon icon={faChevronRight} size="2x" />
+      <button onClick={handleNext} className="text-gray-800 mx-2 sm:mx-4">
+        <FontAwesomeIcon icon={faChevronRight} size="1x sm:2x" />
       </button>
     </div>
   );
