@@ -22,6 +22,7 @@ const Navbar = () => {
   const toggleSubmenu = () => setIsSubmenuOpen(!isSubmenuOpen);
   const toggleSubmenu2 = () => setIsSubmenuOpen2(!isSubmenuOpen2);
   const toggleSubmenu3 = () => setIsSubmenuOpen3(!isSubmenuOpen3);
+  const uniqueBrands = [...new Set(brandsData.map((brand) => brand.name))];
 
   return (
     <nav className=" bg-white text-black p-4 shadow fixed top-0 left-0 w-full z-10">
@@ -164,14 +165,15 @@ const Navbar = () => {
                   onMouseEnter={() => setIsSubmenuOpen3(true)} // Keep submenu open on hover
                   onMouseLeave={() => setIsSubmenuOpen3(false)} // Close submenu when not hovered
                 >
-                  {brandsData.map((brand, index) => (
+                  {uniqueBrands.map((brand, index) => (
                     <NavLink
                       key={index}
-                      to={`/brands/${brand.name.toLowerCase()}`}
+                      to={`/brands/${brand.toLowerCase()}`}
                       className="block text-lg px-2 py-1 hover:bg-gray-200 hover:text-black"
-                      aria-label={brand.name}
+                      aria-label={brand}
+                     
                     >
-                      {brand.name}
+                      {brand}
                     </NavLink>
                   ))}
                 </div>
