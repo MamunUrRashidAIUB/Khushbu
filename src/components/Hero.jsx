@@ -96,12 +96,7 @@ const Hero = () => {
 
       {/* Navigation Buttons */}
       <button
-        onClick={() => {
-          currentSlide.current =
-            (currentSlide.current - 1 + totalSlides.current) %
-            totalSlides.current;
-          slideImages();
-        }}
+       
         className="absolute left-4 top-1/2 text-white transform -translate-y-1/2 bg-gray-400 px-4 py-2 rounded hover:bg-gray-600 transition"
       >
         Prev
