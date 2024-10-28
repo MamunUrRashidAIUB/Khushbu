@@ -1,10 +1,17 @@
+import { useState } from "react"; // Import useState to manage state
 import { FaShoppingCart, FaEye, FaHeart } from "react-icons/fa";
 
 const Card = ({ items }) => {
+  const [visibleItems, setVisibleItems] = useState(8); // State to manage number of visible items
+
+  const handleShowMore = () => {
+    setVisibleItems((prev) => prev + 8); // Increase the visible items by 8 on button click
+  };
+
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center flex-col">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {items.map((item, index) => (
+        {items.slice(0, visibleItems).map((item, index) => (
           <div
             key={index}
             className="border border-gray-200 p-4 rounded-lg shadow-lg"
@@ -30,6 +37,14 @@ const Card = ({ items }) => {
           </div>
         ))}
       </div>
+      {visibleItems < items.length && ( // Check if there are more items to show
+        <button
+          onClick={handleShowMore}
+          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Show More
+        </button>
+      )}
     </div>
   );
 };
