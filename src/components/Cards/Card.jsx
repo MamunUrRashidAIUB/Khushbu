@@ -1,30 +1,37 @@
-import data from "../../Khushbu.json";
+import { FaShoppingCart, FaEye, FaHeart } from "react-icons/fa";
 
-const Card = () => {
-  const cardData = data.map((item, index) => {
-    item.id = index + 1;
-    return item;
-  });
-
+const Card = ({ items }) => {
   return (
-    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {cardData.map((item) => (
-        <div
-          key={item.id}
-          className="flex flex-col items-center justify-center"
-        >
-          <img
-            src={item.image}
-            alt={item.name}
-            className="w-48 h-48 object-cover rounded-full"
-          />
-          <h2 className="text-xl font-bold text-gray-800">{item.name}</h2>
-        </div>
-      ))}
+    <div className="flex justify-center items-center">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="border border-gray-200 p-4 rounded-lg shadow-lg"
+          >
+            <img
+              src={item.image}
+              alt={item.name}
+              className="object-cover rounded-full"
+            />
+            <h1>{item.price}</h1>
+            <h2 className="text-xl font-bold text-gray-800">{item.name}</h2>
+            <div className="flex gap-2 mt-4">
+              <button>
+                <FaShoppingCart className="mr-2" />
+              </button>
+              <button>
+                <FaEye className="mr-2" />
+              </button>
+              <button>
+                <FaHeart className="mr-2" />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
 export default Card;
-
-//<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
