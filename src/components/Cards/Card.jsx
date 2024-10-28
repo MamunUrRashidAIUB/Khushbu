@@ -40,7 +40,7 @@ const Card = ({ items }) => {
       {visibleItems < items.length && ( // Check if there are more items to show
         <button
           onClick={handleShowMore}
-          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+         className=" mt-4 bg-white uppercase text-gray-500 font-bold lg:py-2 px-8 rounded-full border border-gray-300 hover:border-gray-600"
         >
           Show More
         </button>
