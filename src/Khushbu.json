@@ -66,7 +66,7 @@
     "price": 57.99,
     "description": "A calming and soothing fragrance with hints of lavender and chamomile.",
     "image": "./images/p6.jpeg",
-    "category": "Floral",
+    "category": "Latest",
     "gender": "Women",
     "link": "/perfume1",
     "title": "Lavender Bliss by Brand B"
@@ -78,7 +78,7 @@
     "price": 64.99,
     "description": "A deep and mysterious fragrance with amber and spicy notes.",
     "image": "./images/p7.jpeg",
-    "category": "Oriental",
+    "category": "Men",
     "gender": "Unisex",
     "link": "/perfume1",
     "title": "Amber Noir by Brand D"
@@ -90,7 +90,7 @@
     "price": 44.99,
     "description": "A fresh and invigorating scent with notes of pine and green leaves.",
     "image": "./images/p8.jpeg",
-    "category": "Earthy",
+    "category": "Latest",
     "gender": "Men",
     "link": "/perfume1",
     "title": "Green Forest by Brand C"
@@ -186,7 +186,7 @@
     "price": 84.99,
     "description": "An opulent and rich oud-based fragrance.",
     "image": "./images/p17.jpeg",
-    "category": "Oriental",
+    "category": "Latest",
     "gender": "Unisex",
     "link": "/perfume1",
     "title": "Mystic Oud by Brand C"
