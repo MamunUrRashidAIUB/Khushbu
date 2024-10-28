@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import SearchBar from "./components/SearchBar";
 import PerfumeLogos from "./components/PerfumeLogos";
 import CategoryButtons from "./components/buttons/CategoryButtons";
+import Card from "./components/Cards/Card";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <SearchBar />
           <PerfumeLogos />
           <CategoryButtons />
+          <Card />
         </Route>
       </Switch>
     </>
