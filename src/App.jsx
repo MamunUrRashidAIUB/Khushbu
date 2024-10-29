@@ -9,6 +9,7 @@ import Card from "./components/Cards/Card";
 import data from "./Khushbu.json";
 import BodySpray from "./components/views/BodySpray";
 import Attar from "./components/views/Attar";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [items, setItems] = useState(data);
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/Body-spray" component={BodySpray} />
         <Route path="/Attar" component={Attar} />
       </Switch>
+      <Footer />
     </>
   );
 };
