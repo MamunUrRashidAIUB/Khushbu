@@ -7,27 +7,26 @@ import PerfumeLogos from "./components/PerfumeLogos";
 import CategoryButtons from "./components/buttons/CategoryButtons";
 import Card from "./components/Cards/Card";
 import data from "./Khushbu.json";
-import Footer from "./components/Footer";
+import BodySpray from "./components/views/BodySpray";
 
 const App = () => {
   const [items, setItems] = useState(data);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Navbar />
-      <div className="flex-grow">
-        <Switch>
-          <Route path="/" exact>
-            <Hero />
-            <SearchBar />
-            <PerfumeLogos />
-            <CategoryButtons setItems={setItems} />
-            <Card items={items} />
-          </Route>
-        </Switch>
-      </div>
-      <Footer />
-    </div>
+      <Switch>
+        <Route path="/" exact>
+          <Hero />
+          <SearchBar />
+          <PerfumeLogos />
+          <CategoryButtons setItems={setItems} />
+          <Card items={items} />
+        </Route>
+
+        <Route path="/Body-spray" component={BodySpray} />
+      </Switch>
+    </>
   );
 };
 
