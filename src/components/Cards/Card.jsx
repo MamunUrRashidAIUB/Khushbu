@@ -1,11 +1,11 @@
-import { useState } from "react"; // Import useState to manage state
+import { useState } from "react";
 import { FaShoppingCart, FaEye, FaHeart } from "react-icons/fa";
 
 const Card = ({ items }) => {
-  const [visibleItems, setVisibleItems] = useState(8); // State to manage number of visible items
+  const [visibleItems, setVisibleItems] = useState(8);
 
   const handleShowMore = () => {
-    setVisibleItems((prev) => prev + 8); // Increase the visible items by 8 on button click
+    setVisibleItems((prev) => prev + 8);
   };
 
   return (
@@ -37,7 +37,7 @@ const Card = ({ items }) => {
           </div>
         ))}
       </div>
-      {visibleItems < items.length && ( // Check if there are more items to show
+      {visibleItems < items.length && (
         <button
           onClick={handleShowMore}
           className=" mt-4 bg-white uppercase text-gray-500 font-bold lg:py-2 px-8 rounded-full border border-gray-300 hover:border-gray-600"
