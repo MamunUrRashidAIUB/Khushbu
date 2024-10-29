@@ -8,6 +8,7 @@ import CategoryButtons from "./components/buttons/CategoryButtons";
 import Card from "./components/Cards/Card";
 import data from "./Khushbu.json";
 import BodySpray from "./components/views/BodySpray";
+import Attar from "./components/views/Attar";
 
 const App = () => {
   const [items, setItems] = useState(data);
@@ -25,6 +26,7 @@ const App = () => {
         </Route>
 
         <Route path="/Body-spray" component={BodySpray} />
+        <Route path="/Attar" component={Attar} />
       </Switch>
     </>
   );
