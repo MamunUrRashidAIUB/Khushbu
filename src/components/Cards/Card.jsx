@@ -24,11 +24,7 @@ const Card = ({ items }) => {
             key={index}
             className="border border-gray-200 p-4 rounded-lg shadow-lg"
           >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="object-cover rounded-full"
-            />
+            <img src={item.image} alt={item.name} className="object-cover" />
             <h1>{item.price}</h1>
             <h2 className="text-xl font-bold text-gray-800">{item.name}</h2>
             <div className="flex gap-2 mt-4">
@@ -62,11 +58,11 @@ const Card = ({ items }) => {
           >
             x
           </button>
-          <div className="bg-white rounded-lg p-6 max-w-lg w-full">
+          <div className="bg-white  p-6 max-w-lg w-full">
             <img
               src={Selecteditem.image}
               alt={Selecteditem.name}
-              className=" object-cover rounded-md mb-4"
+              className=" object-cover  mb-4"
             />
             <h2 className="text-2xl font-semibold mb-2">{Selecteditem.name}</h2>
             <p className="text-gray-600 mb-4">{Selecteditem.description}</p>
