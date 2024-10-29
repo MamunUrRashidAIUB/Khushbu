@@ -14,7 +14,7 @@ const CardA = ({ item, onQuickView }) => {
       <img
         src={item.image}
         alt={item.name}
-        className="object-cover rounded-full w-24 h-24 mb-4"
+        className="object-cover   mb-4"
       />
       <h1 className="text-lg font-bold text-gray-800 mb-2">${item.price}</h1>
       <h2 className="text-xl font-semibold text-gray-700">{item.name}</h2>
