@@ -11,11 +11,7 @@ const CardA = ({ item, onQuickView }) => {
   };
   return (
     <div className="border border-gray-200 p-4 rounded-lg shadow-lg">
-      <img
-        src={item.image}
-        alt={item.name}
-        className="object-cover   mb-4"
-      />
+      <img src={item.image} alt={item.name} className="object-cover   mb-4" />
       <h1 className="text-lg font-bold text-gray-800 mb-2">${item.price}</h1>
       <h2 className="text-xl font-semibold text-gray-700">{item.name}</h2>
       <div className="flex gap-2 mt-4">
