@@ -1,7 +1,9 @@
 import data from "../../Khushbu.json";
 
 const BodySpray = () => {
-  const bodySpray = Array.from(new Set(data.map((item) => item.id)));
+  const bodySpray = Array.from(
+    new Map(data.map((item) => [item.category, item])).values()
+  );
 
   return (
     <div className="flex mt-20">
