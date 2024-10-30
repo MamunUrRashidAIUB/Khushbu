@@ -17,6 +17,11 @@ import WishlistView from "./components/Common/WishlistView";
 
 const App = () => {
   const [items, setItems] = useState(data);
+  const [cartItems, setCartItems] = useState([]); // State for cart items
+
+  const addToCart = (item) => {
+    setCartItems((prev) => [...prev, item]); // Adds the item to the cart
+  };
 
   return (
     <>
@@ -27,12 +32,15 @@ const App = () => {
           <SearchBar />
           <PerfumeLogos />
           <CategoryButtons setItems={setItems} />
-          <Card items={items} />
+          <Card items={items} addToCart={addToCart} />{" "}
+          {/* Pass addToCart to Card */}
         </Route>
 
         <Route path="/Body-spray" component={BodySpray} />
         <Route path="/Attar" component={Attar} />
-        <Route path="/Cart" component={Cart} />
+        <Route path="/Cart">
+          <Cart cartItems={cartItems} /> {/* Pass cartItems to Cart */}
+        </Route>
         <Route path="/Login" component={LoginView} />
         <Route path="/search" component={SearchView} />
         <Route path="/wishlist" component={WishlistView} />
