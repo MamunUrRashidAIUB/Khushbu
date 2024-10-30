@@ -10,6 +10,10 @@ import data from "./Khushbu.json";
 import BodySpray from "./components/views/BodySpray";
 import Attar from "./components/views/Attar";
 import Footer from "./components/Footer";
+import Cart from "./components/Cards/Cart";
+import LoginView from "./components/auth/views/LoginView";
+import SearchView from "./components/search/SearchView";
+import WishlistView from "./components/Common/WishlistView";
 
 const App = () => {
   const [items, setItems] = useState(data);
@@ -28,6 +32,10 @@ const App = () => {
 
         <Route path="/Body-spray" component={BodySpray} />
         <Route path="/Attar" component={Attar} />
+        <Route path="/Cart" component={Cart} />
+        <Route path="/Login" component={LoginView} />
+        <Route path="/search" component={SearchView} />
+        <Route path="/wishlist" component={WishlistView} />
       </Switch>
       <Footer />
     </>

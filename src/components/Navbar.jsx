@@ -166,22 +166,33 @@ const Navbar = () => {
 
         {/* Icons Section */}
         <div className="flex items-center space-x-4">
-          <FaHeart
-            aria-label="Favorites"
-            className="text-xl cursor-pointer hover:text-gray-400"
-          />
-          <FaSearch
-            aria-label="Search"
-            className="text-xl cursor-pointer hover:text-gray-400"
-          />
-          <FaUser
-            aria-label="User Profile"
-            className="text-xl cursor-pointer hover:text-gray-400"
-          />
-          <FaShoppingCart
-            aria-label="Shopping Cart"
-            className="text-xl cursor-pointer hover:text-gray-400"
-          />
+          <NavLink to="/wishlist">
+            <FaHeart
+              aria-label="Favorites"
+              className="text-xl cursor-pointer hover:text-gray-400"
+            />
+          </NavLink>
+
+          <NavLink to="/search">
+            <FaSearch
+              aria-label="Search"
+              className="text-xl cursor-pointer hover:text-gray-400"
+            />
+          </NavLink>
+
+          <NavLink to="/Login">
+            <FaUser
+              aria-label="User Profile"
+              className="text-xl cursor-pointer hover:text-gray-400"
+            />
+          </NavLink>
+
+          <NavLink to="/Cart">
+            <FaShoppingCart
+              aria-label="Shopping Cart"
+              className="text-xl cursor-pointer hover:text-gray-400"
+            />
+          </NavLink>
         </div>
       </div>
 
