@@ -22,13 +22,23 @@ const Cart = ({ cartItems }) => {
         ) : (
           <>
             <h2>Your Cart Items:</h2>
-            <ul>
+            <div>
               {cartItems.map((item, index) => (
-                <li key={index}>
-                  {item.name} - ${item.price}
-                </li>
+                <div key={index} className="flex items-center gap-6">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-20 h-20 object-cover"
+                  />
+                  <p>
+                    {item.name} - ${item.price}
+                  </p>
+                  <button className="bg-black hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
+                    Remove
+                  </button>
+                </div>
               ))}
-            </ul>
+            </div>
           </>
         )}
 
