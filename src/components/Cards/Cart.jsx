@@ -25,7 +25,7 @@ const Cart = ({ cartItems }) => {
             <ul>
               {cartItems.map((item, index) => (
                 <li key={index}>
-                  {item.name} - ${item.price} 
+                  {item.name} - ${item.price}
                 </li>
               ))}
             </ul>
