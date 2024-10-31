@@ -12,7 +12,7 @@ import logo from "../components/logo.png";
 import brandsData from "../Khushbu.json";
 import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ size }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isSubmenuOpen2, setIsSubmenuOpen2] = useState(false);
@@ -187,11 +187,14 @@ const Navbar = () => {
             />
           </NavLink>
 
-          <NavLink to="/Cart">
+          <NavLink className="flex gap-1" to="/Cart">
             <FaShoppingCart
               aria-label="Shopping Cart"
               className="text-xl cursor-pointer hover:text-gray-400"
             />
+            <span className="bg-black rounded-full text-white px-1">
+              {size}
+            </span>
           </NavLink>
         </div>
       </div>
